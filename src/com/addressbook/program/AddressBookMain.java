@@ -10,7 +10,7 @@ public class AddressBookMain {
 		Scanner sc = new Scanner(System.in);
 		
 		do {
-			System.out.println("1. ADD CONTACT \n2. DISPLAY CONTACT ");
+			System.out.println("1. ADD CONTACT \n2. DISPLAY CONTACT \n3.EDIT CONTACT");
 			System.out.println("Enter the Operation Number");
 			option = sc.nextInt();
 
@@ -21,11 +21,14 @@ public class AddressBookMain {
 			case 2:
 				s.showContacts();
 				break;
+			case 3:
+				s.editContact();
+				break;	
 			default:
 				System.out.println("Wrong Operation Number");
 				break;
 			}
-		} while (option < 3);
+		} while (option < 4);
 		
 	}
 
