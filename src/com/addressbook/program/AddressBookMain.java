@@ -1,11 +1,32 @@
 package com.addressbook.program;
 
+import java.util.Scanner;
+
 public class AddressBookMain {
 	public static void main(String[] args) {
 		System.out.println("Welcome to Address Book Program");
-		ContactPerson s = new ContactPerson("shashi","Daddimani","shashi0344daddimani@gmail.com","Hukkeri","Belagavi", "Karnataka", 591309,9113274303l);
-//		s.ContactPerson("shashi","Daddimani","shashi0344daddimani@gmail.com","Hukkeri",591309,9113274303l);
-		System.out.println(s.toString());
+		AddressBook s = new AddressBook();
+		int option;
+		Scanner sc = new Scanner(System.in);
+		
+		do {
+			System.out.println("1. ADD CONTACT \n2. DISPLAY CONTACT ");
+			System.out.println("Enter the Operation Number");
+			option = sc.nextInt();
+
+			switch (option) {
+			case 1:
+				s.addContact();
+				break;
+			case 2:
+				s.showContacts();
+				break;
+			default:
+				System.out.println("Wrong Operation Number");
+				break;
+			}
+		} while (option < 3);
+		
 	}
 
 }
